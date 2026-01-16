@@ -8,12 +8,25 @@
           round
           icon="menu"
           aria-label="Menu"
+          class="q-mr-sm"
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Jordi Gomara Website
-        </q-toolbar-title>
+        <q-avatar class="q-mr-sm">
+          <q-img
+              src="public/img/profile.jpg"
+              alt="Jordi Gomara"
+              style="border-radius: 50%"
+            />
+        </q-avatar>
+
+        <q-tabs v-model="tab" shrink >
+          <q-tab name="tab1" label="Home" />
+          <q-tab name="tab2" label="Art" />
+          <q-tab name="tab3" label="Videogames" />
+        </q-tabs>
+
+        <q-space />
 
         <div>v{{ appVersion }}</div>
       </q-toolbar>
