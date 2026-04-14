@@ -7,7 +7,8 @@
         :options="[
           { label: 'Info', value: 'info' },
           { label: 'My art', value: 'art' },
-          { label: 'Dual Elemental', value: 'videogames' }
+          { label: 'Dual Elemental', value: 'videogames' },
+          { label: 'Map', value: 'map' }
         ]"
       />
 
@@ -49,6 +50,11 @@
             src="https://www.youtube.com/embed/2gVLFwD4QkE?si=SaC8wwiHbIitVjqm"
           />
         </q-tab-panel>
+
+        <q-tab-panel name="map">
+          <div class="text-h6">Leaflet Map</div>
+          <MapComponent></MapComponent>
+        </q-tab-panel>
       </q-tab-panels>
     </div>
   </div>
@@ -57,8 +63,13 @@
 <script>
 import { defineComponent, ref } from 'vue'
 
+import MapComponent from 'components/MapComponent.vue'
+
 export default defineComponent({
   name: 'IndexPage',
+  components: {
+    MapComponent
+  },
   setup () {
     const panel = ref('info')
     return {
